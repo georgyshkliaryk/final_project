@@ -1,0 +1,21 @@
+h1, form {
+    text-align: center;
+}
+input {
+    margin-right: 2em;
+    margin-bottom: 1em;
+}
+.hallChoose {
+    margin: 3em 0 3em 0;
+}
+#tickets {
+    border-top: black solid 10px;
+    margin: 0 0em;
+    padding-top: 4em;
+}
+body {
+    background: rgb(255, 255, 226);
+}
+input, button {
+    outline: none;
+}

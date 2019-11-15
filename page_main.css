@@ -1,0 +1,103 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: larger;
+    margin: 0;
+    background: url('imgs/kino2.jpg') no-repeat;
+    background-size: cover;
+    color: snow;
+}
+a, a:hover, a:focus, a:visited, a:active, a:link {
+    text-decoration: none;
+    outline: none;
+}
+button:hover {
+    cursor: pointer;
+    outline: none;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+    background: #9c0000;
+    height: 4em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+}
+header span {
+    font-weight: bold;
+}
+header div:nth-child(1) {
+    font-weight: bold;
+    padding-top: 15px;
+}
+header div {
+    margin: 8px 0;
+}
+section {
+    text-align: center;
+    margin: 26em 15% 15% 10em;
+}
+section>div:nth-child(1) {
+    font-size: 50px;
+    font-family: 'Exo 2', sans-serif;
+}
+section>div:nth-child(2) {
+    width: 20em;
+    text-align: left;
+    margin: 5em 0;
+    font-size: 35px;
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+section li {
+    margin-bottom: 1em;
+}
+section ul {
+    list-style-image: url('imgs/galka50.png');
+}
+button {
+    width: 10em;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 30px;
+    background-color: #9c0000;;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    height: 3em;
+    color: snow;
+    transition: 0.3s;
+}
+button:hover {
+    background: red;
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+aside {
+    color: rgb(105, 105, 105);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15%;
+}
+body>div {
+    color: rgb(105, 105, 105);
+    text-align: center;
+}
+img {
+    margin-right: 1em;
+}
+aside>div:nth-child(2) {
+    margin-top: 2em;
+}
+aside ul>li:nth-child(1) {
+    list-style-image: url('imgs/phone25.png');
+}
+aside ul>li:nth-child(2) {
+    list-style-image: url('imgs/email25.png');
+}
+aside ul>li:nth-child(3) {
+    list-style-image: url('imgs/site25.png');
+}
