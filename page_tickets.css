@@ -37,7 +37,7 @@ input, button {
     transform: scale(1.3);
 }
 .check label {
-    display: block;
+    display: inline-block;
     box-sizing: border-box;
     width: 25px;
     height: 25px;
@@ -51,7 +51,7 @@ input, button {
 .check label:before {
     content: '';
     position: absolute;
-    display: block;
+    display: inline-block;
     height: 300%;
     width: 300%;
     top: -100%;
@@ -62,7 +62,7 @@ input, button {
 }
 .check label:after {
     content: '';
-    display: block;
+    display: inline-block;
     height: 100%;
     width: 100%;
     background: url('https://cbwconline.com/IMG/Codepen/Check.svg') center center no-repeat;

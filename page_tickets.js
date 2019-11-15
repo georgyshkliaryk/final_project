@@ -75,16 +75,31 @@ function HallChoose() {
             let br = document.createElement('br');
             document.querySelector('#tickets').append(br);
         }
+        let div = document.createElement('div');
         let input = document.createElement('input');
+        let label = document.createElement('label');
+
+        let class1 = document.createAttribute('class');
         let checkbox = document.createAttribute("type");
+        let id = document.createAttribute('id');
+        let for1 = document.createAttribute('for');
+        
+        class1.value = "check";
+        id.value = "checkbox" + i;
         checkbox.value = "checkbox";
+        for1.value = "checkbox" + i;            //checkbox0, checkbox1, ....
         input.setAttributeNode(checkbox);
-        document.querySelector('#tickets').append(input);
+        input.setAttributeNode(id);
+        label.setAttributeNode(for1);
+        div.setAttributeNode(class1);
+        document.querySelector('#tickets').append(div);
+        document.querySelector('#tickets div').append(input);
+        document.querySelector('#tickets div').append(label);
     }
 }
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
