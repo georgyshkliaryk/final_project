@@ -1,8 +1,8 @@
 
 let height=0, width=0, n=0;
-let count = 0;
+let count=0;
 let j=0;
-disabled = [];
+let disabled = [];
 
 function DisabledPlaces() {
     let rand = getRandomInt(0, n);
@@ -19,17 +19,16 @@ function CheckDisabled() {
         }
     }
 }
-
 function ChooseTickets() {
     for (let i=0; i<n; i++) {
-            if (tickets[i].checked == true) {
-                let place = (i+1) % width; 
-                let row = Math.ceil((i+1)/width); 
-                alert('Ряд: ' + row + ' Место: ' + place);
-            }
+        if (tickets[i].checked == true) {
+            let place = (i+1) % width; 
+            let row = Math.ceil((i+1)/width); 
+            alert('Ряд: ' + row + ' Место: ' + place);
         }
+    }
 }
- function CheckMax() {
+function CheckMax() {
     count = 0;
     for (let i=0; i<n; i++) { 
         if (tickets[i].checked) {
@@ -37,7 +36,7 @@ function ChooseTickets() {
         }
     }      
     if (count == 5) {
-        document.querySelector("#warning").innerHTML = 'Не более 5 билетов!'; 
+        document.querySelector("#warning").innerHTML = 'Не более 5 мест!'; 
         for (let i=0; i<n; i++) {
             if (tickets[i].checked == false) {
                 tickets[i].disabled = true;
@@ -52,7 +51,6 @@ function ChooseTickets() {
                 tickets[i].disabled = false;
             }
         }
-
     }
 }  
 function HallChoose() {
