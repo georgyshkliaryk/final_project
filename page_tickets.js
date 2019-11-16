@@ -57,14 +57,24 @@ function HallChoose() {
     if (document.querySelector('select').options[0].selected) {
         height = 10;
         width = 15;
+        document.querySelector('#tickets').style.width = "20em";
+        document.querySelector('#tickets').style.padding = "5em 5em";
+        document.querySelector('#tickets').style.height = "15em";
+        
     }
     if (document.querySelector('select').options[1].selected) {
         height = 15;
         width = 23;
+        document.querySelector('#tickets').style.width = "30em";
+        document.querySelector('#tickets').style.padding = "5em 5em";
+        document.querySelector('#tickets').style.height = "25em";
     }
     if (document.querySelector('select').options[2].selected) {
         height = 20;
         width = 30;
+        document.querySelector('#tickets').style.width = "40em";
+        document.querySelector('#tickets').style.padding = "5em 5em";
+        document.querySelector('#tickets').style.height = "30em";
     }
     n = height*width;
     document.querySelector('#tickets').innerHTML = '';

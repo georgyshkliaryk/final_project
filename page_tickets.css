@@ -13,6 +13,11 @@ input {
     margin: 0 2em;
     padding: 4em 0;
     border-radius: 20px;
+    margin: 0 auto;
+    border-top: darkblue 15px solid;
+    margin-bottom: 10em;
+}
+#tickets div {
 }
 body {
     background: rgb(255, 255, 226);
@@ -32,6 +37,10 @@ input, button {
 .check input[type="checkbox"]:checked + label {
     background: #009620;
     border-color: #009620;
+}
+.check input[type="checkbox"]:disabled + label {
+    background: rgb(129, 129, 129);
+    border-color: rgb(99, 99, 99);
 }
 .check input[type="checkbox"]:checked + label:after {
     transform: scale(1.3);
