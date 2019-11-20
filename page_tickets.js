@@ -95,7 +95,7 @@ function HallChoose() {
         class1.value = "check";
         id.value = "checkbox" + i;
         checkbox.value = "checkbox";
-        for1.value = "checkbox" + i;            //checkbox0, checkbox1, ....
+        for1.value = "checkbox" + i;            //checkbox0, checkbox1, ...
         input.setAttributeNode(checkbox);
         input.setAttributeNode(id);
         label.setAttributeNode(for1);
@@ -110,4 +110,31 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
+function scrollTo(hash) {
+    location.hash = "#" + hash;
+}
+let isValid = false;
+function Registration() {
+    for (let i=0; i<(registration.length-1); i++) {
+        if (registration[i].value == '') {
+            registration.getElementsByTagName("span")[i].style.visibility = "visible";
+            isValid = false;
+        }
+        else {
+            isValid = true;
+        }
+    }
+    if (isValid == true) {
+        document.querySelector("section1").style.display = "block";
+    }
+}
+/*function HoverPlace() {
+    for (let i=0; i<n; i++) {
+        tickets[i].onmouseover = Highlight(i);
+    }
+}
+function Highlight(i) {
+    document.getElementsByTagName("label")[i].innerHTML = "1";
+}   */
+
 

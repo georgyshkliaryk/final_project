@@ -15,12 +15,28 @@
         <div><a href="/page_main.html">kino-tickets.by</a></div>
         <div>Звоните &nbsp;&nbsp;|&nbsp;&nbsp; <span>+375255357191</span></div>
     </header>
-    <h1>Закажите билеты в кино онлайн!</h1>
+    <h1>Заказ билетов</h1>
+    <form id="registration">
+        <span>Заполните это поле!</span><br>
+        <label for="name">Ваше Имя:</label>
+        <input type="text" id="name" placeholder="Иван"><br>
+        <span>Заполните это поле!</span><br>
+        <label for="surname">Ваша Фамилия:</label>
+        <input type="text" id="surname" placeholder="Иванов"><br>
+        <span>Заполните это поле!</span><br>
+        <label for="phone">Телефон для связи:</label>
+        <input type="tel" id="phone" placeholder="+375293435544"><br>
+        <span>Заполните это поле!</span><br>
+        <label for="email">Эл. адрес (необязательно): </label>
+        <input type="email" id="email" placeholder="example@gmail.com">
+    </form>
+    <button class="accept" onclick="Registration(); HallChoose(); DisabledPlaces(); HoverPlace();">Подтвердить</button>
+    <section1>
     <div class="hallChoose">
     <span id="warning">&nbsp;</span><br>
-    <h3>Выберите зал:</h3>
+    <h2>Выберите зал:</h2>
     <select onchange="HallChoose(); DisabledPlaces();" name="hall">
-        <option value="small">Комфортный зал</option>
+        <option value="small" selected>Комфортный зал</option>
         <option value="medium">Средний зал</option>
         <option value="large">Большой зал</option>
     </select>
@@ -29,7 +45,12 @@
  
     </form>
     <span></span>
-    <button onclick="ChooseTickets()">Выбрать</button>
+    <button class="accept" onclick="ChooseTickets()">Заказать</button>
+    </section1>
+    <div class="check">
+        <input type="checkbox" id="checkbox-1">
+        <label for="checkbox-1"></label>
+    </div>
     <aside>
         <div>
         <ul>
