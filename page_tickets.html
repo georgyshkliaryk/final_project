@@ -7,6 +7,8 @@
     <script src="page_tickets.js"></script>
     <link href="page_tickets.css" rel="stylesheet">
     <link href="page_main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Exo+2|Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calistoga&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon">
     <title>kino-tickets.by</title>
 </head>
@@ -17,6 +19,7 @@
     </header>
     <h1>Заказ билетов</h1>
     <form id="registration">
+        <h3>Пожалуйста, заполните поля ниже:</h3>
         <span>Заполните это поле!</span><br>
         <label for="name">Ваше Имя:</label>
         <input type="text" id="name" placeholder="Иван"><br>
@@ -30,27 +33,46 @@
         <label for="email">Эл. адрес (необязательно): </label>
         <input type="email" id="email" placeholder="example@gmail.com">
     </form>
-    <button class="accept" onclick="Registration(); HallChoose(); DisabledPlaces(); HoverPlace();">Подтвердить</button>
+    <button class="accept" onclick="Registration(); HallChoose(); DisabledPlaces();">Подтвердить</button>
     <section1>
-    <div class="hallChoose">
-    <span id="warning">&nbsp;</span><br>
-    <h2>Выберите зал:</h2>
-    <select onchange="HallChoose(); DisabledPlaces();" name="hall">
-        <option value="small" selected>Комфортный зал</option>
-        <option value="medium">Средний зал</option>
-        <option value="large">Большой зал</option>
-    </select>
-    </div>
-    <form id="tickets" onchange="CheckMax()">
- 
-    </form>
-    <span></span>
-    <button class="accept" onclick="ChooseTickets()">Заказать</button>
+        <div class="hallChoose">
+            <span id="warning">&nbsp;</span><br>
+            <h2>Выберите зал:</h2>
+            <select onchange="HallChoose(); DisabledPlaces();" name="hall">
+                <option value="small" selected>Комфортный зал</option>
+                <option value="medium">Средний зал</option>
+                <option value="large">Большой зал</option>
+            </select>
+            
+        </div>
+        <form id="tickets" onchange="CheckMax()">
+            
+        </form>
+        <span></span>
+        <div>
+            <div class="check">
+                <input type="checkbox" id="checkbox-1" onclick="return false;">
+                <label for="checkbox-1"></label>
+                Место свободно
+            </div>
+            <div class="check">
+                <input type="checkbox" id="checkbox-2" disabled>
+                <label for="checkbox-2"></label> 
+                Место занято
+            </div>
+            <div class="check"> 
+                <input type="checkbox" id="checkbox-3" checked onclick="return false;">
+                <label for="checkbox-3"></label>
+                Ваш выбор
+            </div>
+        </div>
+        <button class="accept" onclick="ChooseTickets()">Заказать</button>
     </section1>
-    <div class="check">
-        <input type="checkbox" id="checkbox-1">
-        <label for="checkbox-1"></label>
-    </div>
+    <h2 id="printTickets">Ваши билеты:</h2>
+    <section2>
+    </section2>
+    <h2 id="Thx"></h2>
+    <h4 id="call"></h4>
     <aside>
         <div>
         <ul>

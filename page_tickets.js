@@ -3,6 +3,7 @@ let height=0, width=0, n=0;
 let count=0;
 let j=0;
 let disabled = [];
+let hall = "";
 
 function DisabledPlaces() {
     let rand = getRandomInt(0, n);
@@ -20,11 +21,25 @@ function CheckDisabled() {
     }
 }
 function ChooseTickets() {
+    document.querySelector('section2').innerHTML = "";
+    document.querySelector("#Thx").innerHTML = "";
+    document.querySelector("#call").innerHTML = "";
+    document.querySelector('#printTickets').style.display = "none";
+    HallSize();
     for (let i=0; i<n; i++) {
         if (tickets[i].checked == true) {
             let place = (i+1) % width; 
             let row = Math.ceil((i+1)/width); 
-            alert('Ряд: ' + row + ' Место: ' + place);
+            if (place == 0) 
+                place = width;
+            let div = document.createElement('div');
+            let p = document.createElement('p');
+            document.querySelector('section2').appendChild(div);
+            div.appendChild(p);
+            p.innerHTML = "<b>Ряд: </b>" + row + "<br>" + "<b>Место: </b>" + place + "<br>" + "<b>Зал: </b>" + hall;
+            document.querySelector('#printTickets').style.display = "inline-block";
+            document.querySelector("#Thx").innerHTML = "Спасибо за заказ, " + registration[0].value + "!";
+            document.querySelector("#call").innerHTML = "Мы сделаем звонок по номеру <i>" + registration[2].value + "</i> в ближайшее время для уточнения информации.";
         }
     }
 }
@@ -53,8 +68,9 @@ function CheckMax() {
         }
     }
 }  
-function HallChoose() {
+function HallSize() {
     if (document.querySelector('select').options[0].selected) {
+        hall = "Комфортный";
         height = 10;
         width = 15;
         document.querySelector('#tickets').style.width = "20em";
@@ -63,6 +79,7 @@ function HallChoose() {
         
     }
     if (document.querySelector('select').options[1].selected) {
+        hall = "Средний";
         height = 15;
         width = 23;
         document.querySelector('#tickets').style.width = "30em";
@@ -70,12 +87,16 @@ function HallChoose() {
         document.querySelector('#tickets').style.height = "25em";
     }
     if (document.querySelector('select').options[2].selected) {
+        hall = "Большой";
         height = 20;
         width = 30;
         document.querySelector('#tickets').style.width = "40em";
         document.querySelector('#tickets').style.padding = "5em 5em";
         document.querySelector('#tickets').style.height = "30em";
     }
+}
+function HallChoose() {
+    HallSize();
     n = height*width;
     document.querySelector('#tickets').innerHTML = '';
     for (let i=0; i<n; i++) {
@@ -110,9 +131,6 @@ function getRandomInt(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min)) + min;
 }
-function scrollTo(hash) {
-    location.hash = "#" + hash;
-}
 let isValid = false;
 function Registration() {
     for (let i=0; i<(registration.length-1); i++) {
@@ -128,13 +146,7 @@ function Registration() {
         document.querySelector("section1").style.display = "block";
     }
 }
-/*function HoverPlace() {
-    for (let i=0; i<n; i++) {
-        tickets[i].onmouseover = Highlight(i);
-    }
-}
-function Highlight(i) {
-    document.getElementsByTagName("label")[i].innerHTML = "1";
-}   */
+
+
 
 
