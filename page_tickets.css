@@ -44,15 +44,14 @@ body .accept {
     margin-bottom: 5em;
 }
 #registration {
-    text-align: left;
-    margin-left: 23em;
+    text-align: center;
+    margin: auto;
     margin-top: 5em;
     margin-bottom: 2em;
     color: black;
     background-color: rgb(214, 214, 214);
     padding: 3em;
     border-radius: 50px;
-    margin-right: 30em;
     width: 30em;
 }
 #registration input {
